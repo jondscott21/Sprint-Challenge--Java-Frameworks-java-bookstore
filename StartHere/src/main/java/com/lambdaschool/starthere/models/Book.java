@@ -3,6 +3,7 @@ package com.lambdaschool.starthere.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -25,7 +26,7 @@ public class Book extends Auditable
 
     @ManyToMany
     @JoinTable(name = "wrote", joinColumns = @JoinColumn(name = "bookid"), inverseJoinColumns = @JoinColumn(name = "authorid"))
-    private List<Author> authors;
+    private List<Author> authors = new ArrayList<>();
 
     public Book()
     {
