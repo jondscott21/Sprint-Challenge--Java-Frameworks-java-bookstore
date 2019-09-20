@@ -24,8 +24,9 @@ public class Book extends Auditable
     @JsonIgnoreProperties({"userRoles", "hibernateLazyInitializer"})
     private Section section;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "wrote", joinColumns = @JoinColumn(name = "bookid"), inverseJoinColumns = @JoinColumn(name = "authorid"))
+    @JsonIgnoreProperties({"books"})
     private List<Author> authors = new ArrayList<>();
 
     public Book()
