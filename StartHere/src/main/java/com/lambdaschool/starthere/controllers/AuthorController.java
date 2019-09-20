@@ -25,7 +25,7 @@ public class AuthorController
     }
 
     // POST localhost:2019/data/books/{bookid}/authors/{authorid}
-    @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_DATA')")
-    @PostMapping(value = "/data/books/{bookid}/authors/{authorid}")
+//    @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_DATA')")
+//    @PostMapping(value = "/data/books/{bookid}/authors/{authorid}")
 
 }
